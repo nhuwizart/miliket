@@ -1,0 +1,723 @@
+/* General Styles */
+:root {
+    --primary-color: #f7b731; /* Miliket yellow */
+    --secondary-color: #e55c3c; /* A complementary red/orange */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --background-dark: rgba(0, 0, 0, 0.6);
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px; /* Adjust as needed */
+    /* filter: brightness(0) invert(1); */
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav ul li {
+    margin-left: 25px;
+}
+
+.header .nav ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header .nav ul li a:hover {
+    color: var(--primary-color);
+}
+/* Mobile Menu Toggle (Hamburger Icon) */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Above header content */
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--light-text-color);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+/* Mobile Menu
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--light-text-color);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-dark);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav.active ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.nav.active ul li {
+    margin: 10px 0;
+} */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: url('./img/2.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text-color);
+    padding-top: 80px; /* To prevent content from being hidden by fixed header */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--background-dark);  */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    bottom: -100px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+}
+
+.section:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+/* Forms (Registration, Login) */
+.registration-form, .login-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(247, 183, 49, 0.2);
+}
+
+.registration-form .btn-primary, .login-form .btn-primary {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.form-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.form-message.info { /* Added for QR scanner messages */
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+
+/* QR Scan Section */
+.qr-scan-section {
+    text-align: center;
+}
+
+.qr-scanner-container {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000; /* Black background for video */
+}
+
+.qr-video {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below video */
+}
+
+.qr-scan-message {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.qr-scan-points {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#current-points {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+/* About/Rules Section */
+.rules-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.rules-content h3 {
+    color: var(--primary-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.rules-content p, .rules-content ul {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.rules-content ul {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.rules-content ul li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer .social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: var(--light-text-color);
+}
+
+/* --- Modal (Pop-up) Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top, higher than header */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    /* display: flex;  */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Optional: blur background */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Will be overridden by flexbox centering when display:flex is active */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Max width for larger screens */
+    border-radius: 10px;
+    position: relative; /* For positioning the close button */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align: center; /* Center text within the modal */
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Modal Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+
+/* --- Mobile Menu Overlay Styles --- */
+.mobile-menu-overlay {
+    height: 100%;
+    width: 0; /* Bắt đầu với chiều rộng 0 để ẩn đi */
+    position: fixed;
+    z-index: 1500; /* Cao hơn nội dung trang, thấp hơn login modal */
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.95); /* Nền tối, hơi trong suốt */
+    overflow-x: hidden; /* Ngăn cuộn ngang */
+    transition: 0.5s; /* Hiệu ứng chuyển động mượt mà */
+    display: flex; /* Dùng flex để căn giữa các link menu */
+    flex-direction: column;
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.mobile-menu-overlay.open {
+    width: 100%; /* Khi có class 'open', hiển thị toàn màn hình */
+}
+
+.mobile-menu-overlay .close-overlay-btn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mobile-menu-overlay .close-overlay-btn:hover {
+    color: var(--primary-color);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin: 20px 0;
+}
+
+.mobile-nav-links li a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 2.5rem; /* Kích thước chữ lớn hơn cho mobile */
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.mobile-nav-links li a:hover,
+.mobile-nav-links li a:focus {
+    color: #f1f1f1;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+   
+    height: 60vh; /* Full viewport height */
+ 
+}
+    .header .nav {
+        display: none;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .registration-form {
+        padding: 20px;
+    }
+
+    .rules-content {
+        padding: 15px;
+    }
+
+    .rules-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .rules-content p, .rules-content ul {
+        font-size: 1rem;
+    }
+
+    .qr-scanner-container {
+        max-width: 90%;
+    }
+
+    .modal-content {
+        width: 95%; /* Make modal wider on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+   
+    height: 40vh; /* Full viewport height */
+ 
+}
+
+
+.hero-content {
+    
+    bottom: -50px;
+}
+    .header .logo img {
+        height: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .registration-form {
+        padding: 15px;
+    }
+
+    .qr-scanner-container {
+        max-width: 100%;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+}
+
+
+
+
+.account-main-content {
+    padding-top: 120px; /* Đủ không gian để tránh header cố định */
+    padding-bottom: 80px;
+    background-color: #f8f8f8;
+    min-height: calc(100vh - 120px); /* Đảm bảo nội dung đủ cao */
+}
+
+.account-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center; /* Căn giữa nội dung trong các section */
+}
+
+.account-section h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.points-summary p {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+#account-current-points {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+#exam-results-display,
+#user-info-display {
+    text-align: left; /* Để nội dung kết quả hiển thị dạng list đẹp hơn */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+#exam-results-display h3 {
+    color: var(--primary-color);
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+#exam-results-display ul {
+    list-style-type: disc;
+    margin-left: 25px;
+}
+
+#exam-results-display ul li {
+    margin-bottom: 8px;
+}
+
+.user-info-section p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments for account page */
+@media (max-width: 768px) {
+    .account-main-content {
+        padding-top: 100px;
+    }
+    .account-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .account-section h2 {
+        font-size: 1.8rem;
+    }
+    .points-summary p {
+        font-size: 1.1rem;
+    }
+    #account-current-points {
+        font-size: 2rem;
+    }
+    #exam-results-display,
+    #user-info-display {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-main-content {
+        padding-top: 80px;
+    }
+    .account-section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .account-section h2 {
+        font-size: 1.5rem;
+    }
+    .points-summary p {
+        font-size: 1rem;
+    }
+    #account-current-points {
+        font-size: 1.8rem;
+    }
+}

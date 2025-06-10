@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuộc Thi Video Miliket</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./assets/img/logomlk.png" alt="Miliket Logo"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                  <!-- <li><a href="https://comifood.com/" target="_blank">Về chúng tôi</a></li> -->
+                    <li><a href="https://comifood.com/">Về chúng tôi</a></li>
+
+                  <li><a href="#register">Đăng ký dự thi</a></li>
+                    <li><a href="#about">Thể lệ</a></li>
+                    <!-- <li><a href="#qr-scan">Quét QR</a></li> -->
+                    
+                    <li><a href="#" id="login-nav-btn">Đăng nhập</a></li>
+                    <li><a href="#score" id="score">Tài khoản</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+
+     <div id="mobile-nav-overlay" class="mobile-menu-overlay">
+        <span class="close-overlay-btn">×</span>
+        <ul class="mobile-nav-links">
+                  <li><a href="https://comifood.com/">Về chúng tôi</a></li>
+
+          <li><a href="#register">Đăng ký dự thi</a></li>
+            <li><a href="#about">Thể lệ</a></li>
+            <li><a href="#" id="login-overlay-btn">Đăng nhập</a></li> 
+            <li><a href="#" id="scoremb">Tài khoản</a></li>
+
+          </ul>
+    </div>
+
+
+    <main class="hero">
+        <div class="hero-content">
+            <!-- <h1>Sáng Tạo Cùng Miliket</h1> -->
+            <!-- <p>Tham gia cuộc thi video và nhận những phần quà hấp dẫn!</p> -->
+            <button id="register-button" class="btn-primary">Đăng Ký Dự Thi Ngay!</button>
+        </div>
+    </main>
+
+    <section id="register" class="section register-section">
+        <div class="container">
+            <h2>Đăng Ký Dự Thi</h2>
+            <p style="margin-bottom: 1rem;">Điền thông tin của bạn để đăng ký tham gia cuộc thi.</p>
+            <form id="registration-form" class="registration-form">
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số Điện Thoại:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="videoLink">Link Video (YouTube/Google Drive):</label>
+                    <input type="url" id="videoLink" name="videoLink" placeholder="e.g., http://youtube.com/link-video-cua-ban" required>
+                </div>
+                <button type="submit" class="btn-primary">Gửi Đăng Ký</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </div>
+    </section>
+<!-- 
+    <section id="qr-scan" class="section qr-scan-section">
+        <div class="container">
+            <h2>Quét Mã QR Tích Điểm</h2>
+            <p>Quét mã QR trên mỗi gói mì Miliket để tích điểm và tăng cơ hội nhận quà!</p>
+            <div class="qr-scanner-container">
+                <video id="qr-video" class="qr-video"></video>
+                <div id="qr-scan-message" class="qr-scan-message">
+                    Vui lòng cấp quyền truy cập camera để quét mã.
+                </div>
+                <div class="qr-scan-points" id="qr-scan-points">
+                    Điểm của bạn: <span id="current-points">0</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2>Thể Lệ Cuộc Thi</h2>
+            <div class="rules-content">
+                <h3>1. Đối tượng tham gia</h3>
+                <p>Mọi công dân Việt Nam không giới hạn độ tuổi, có đam mê sáng tạo nội dung video.</p>
+
+                <h3>2. Nội dung video</h3>
+                <p>Video dự thi thể hiện sự sáng tạo, độc đáo liên quan đến sản phẩm Miliket. Khuyến khích các video hài hước, review, hướng dẫn nấu ăn, hoặc kể chuyện.</p>
+
+                <h3>3. Yêu cầu kỹ thuật</h3>
+                <ul>
+                    <li>Độ dài: Tối thiểu 1 phút, tối đa 5 phút.</li>
+                    <li>Định dạng: MP4, AVI, MOV.</li>
+                    <li>Chất lượng: Full HD (1080p) trở lên.</li>
+                    <li>Video phải là tác phẩm gốc, chưa từng được công bố trên các phương tiện truyền thông khác.</li>
+                </ul>
+
+                <h3>4. Cách thức tham gia</h3>
+                <p>Đăng ký và gửi link video qua form trên trang web này.</p>
+
+                <h3>5. Thời gian</h3>
+                <p>Bắt đầu: 01/06/2025 - Kết thúc: 30/06/2025.</p>
+
+                <h3>6. Giải thưởng</h3>
+                <ul>
+                    <li>Giải Nhất: 10.000.000 VND và sản phẩm Miliket 1 năm.</li>
+                    <li>Giải Nhì: 5.000.000 VND và sản phẩm Miliket 6 tháng.</li>
+                    <li>Giải Ba: 2.000.000 VND và sản phẩm Miliket 3 tháng.</li>
+                    <li>Giải Khuyến Khích: 1.000.000 VND và sản phẩm Miliket 1 tháng.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>Đăng Nhập</h2>
+            <p>Dành cho thí sinh đã đăng ký để kiểm tra trạng thái bài dự thi.</p>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mật khẩu:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Đăng Nhập</button>
+            </form>
+            <div id="login-message" class="form-message"></div>
+        </div>
+    </div>
+
+    <div id="account" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2>Tài Khoản</h2>
+            
+            <!-- <section class="account-section">
+                <h2>Điểm Tích Lũy Của Bạn</h2>
+                <div class="points-summary">
+                    <p>Tổng điểm hiện có: <span id="account-current-points">0</span> điểm</p>
+                    <p>Bạn có thể sử dụng điểm để đổi quà hoặc tham gia các chương trình đặc biệt của Miliket.</p>
+                    </div>
+            </section> -->
+            <section class="account-section user-info-section">
+                <h2>Thông Tin Cá Nhân</h2>
+                <div id="user-info-display">
+                    <p>Vui lòng đăng nhập để xem thông tin cá nhân của bạn.</p>
+                </div>
+                </section>
+
+            <section class="account-section" id="exam-results-section">
+                <h2>Kết Quả Bài Thi Của Bạn</h2>
+                <div id="exam-results-display">
+                    <p>Bạn chưa có bài thi nào được chấm hoặc kết quả sẽ hiển thị sau.</p>
+                </div>
+            </section>
+
+            
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Miliket. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a> |
+                <a href="#" target="_blank">Instagram</a> |
+                <a href="#" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/function.js"></script>
+</body>
+</html>
