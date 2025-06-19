@@ -10,9 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links (main desktop nav and mobile overlay nav)
     document.querySelectorAll('nav a, .mobile-nav-links a').forEach(anchor => {
         // Chỉ xử lý smooth scroll cho các link không phải là nút đăng nhập
-        if (anchor.id !== 'login-nav-btn' && anchor.id !== 'login-overlay-btn') {
+        // if (anchor.id !== 'login-nav-btn' && anchor.id !== 'login-overlay-btn') {
+        //     anchor.addEventListener('click', function (e) {
+        //         e.preventDefault();
+        //         document.querySelector(this.getAttribute('href')).scrollIntoView({
+        //             behavior: 'smooth'
+        //         });
+        //         // Close mobile menu overlay if open
+        //         if (mobileNavOverlay.classList.contains('open')) {
+        //             mobileNavOverlay.classList.remove('open');
+        //             document.body.style.overflow = ''; // Cho phép cuộn lại
+        //         }
+        //     });
+        // }
+        const href = anchor.getAttribute('href');
+
+        // Chỉ xử lý smooth scroll và preventDefault cho các link nội bộ (bắt đầu bằng '#')
+        // và không phải là nút đăng nhập
+        if (href && href.startsWith('#') && anchor.id !== 'login-nav-btn' && anchor.id !== 'login-overlay-btn') {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+                e.preventDefault(); // Ngăn chặn hành vi mặc định CHỈ KHI là link nội bộ
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
