@@ -44,6 +44,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+
 .header .container {
     display: flex;
     justify-content: space-between;
@@ -234,7 +235,9 @@ body {
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group input[type="url"],
-.form-group input[type="password"] {
+.form-group input[type="password"],
+.form-group textarea
+ {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -242,7 +245,7 @@ body {
     font-size: 1rem;
 }
 
-.form-group input:focus {
+.form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(247, 183, 49, 0.2);
@@ -489,7 +492,7 @@ body {
 .mobile-nav-links li a {
     padding: 8px;
     text-decoration: none;
-    font-size: 2.5rem; /* Kích thước chữ lớn hơn cho mobile */
+    font-size: 2rem; /* Kích thước chữ lớn hơn cho mobile */
     color: #818181;
     display: block;
     transition: 0.3s;
