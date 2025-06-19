@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuộc Thi Video Miliket</title>
+    <title>Cuộc Thi Ảnh/Video Miliket</title>
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/366.png" type="image/x-icon">
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
             <nav class="nav">
                 <ul>
                   <!-- <li><a href="https://comifood.com/" target="_blank">Về chúng tôi</a></li> -->
-                    <li><a href="https://comifood.com/">Về chúng tôi</a></li>
+                    <li><a target="_blank" href="https://comifood.com/ve-chung-toi">Về chúng tôi</a></li>
 
                   <li><a href="#register">Đăng ký dự thi</a></li>
                     <li><a href="#about">Thể lệ</a></li>
@@ -39,7 +39,7 @@
      <div id="mobile-nav-overlay" class="mobile-menu-overlay">
         <span class="close-overlay-btn">×</span>
         <ul class="mobile-nav-links">
-                  <li><a href="https://comifood.com/">Về chúng tôi</a></li>
+                  <li><a target="_blank" href="https://comifood.com/ve-chung-toi">Về chúng tôi</a></li>
 
           <li><a href="#register">Đăng ký dự thi</a></li>
             <li><a href="#about">Thể lệ</a></li>
@@ -61,7 +61,7 @@
     <section id="register" class="section register-section">
         <div class="container">
             <h2>Đăng Ký Dự Thi</h2>
-            <p style="margin-bottom: 1rem;">Điền thông tin của bạn để đăng ký tham gia cuộc thi.</p>
+            <p style="margin-bottom: 1rem; text-align: center !important;">Điền thông tin của bạn để đăng ký tham gia cuộc thi.</p>
             <form id="registration-form" class="registration-form">
                 <div class="form-group">
                     <label for="fullName">Họ và Tên:</label>
@@ -76,9 +76,18 @@
                     <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="videoLink">Link Video (YouTube/Google Drive):</label>
+                    <label for="videoLink">Link Ảnh/Video (YouTube/Google Drive):</label>
                     <input type="url" id="videoLink" name="videoLink" placeholder="e.g., http://youtube.com/link-video-cua-ban" required>
                 </div>
+                <div class="form-group">
+                    <label for="share">Hãy chia sẻ ký ức của bạn về mì Miliket</label>
+                    <textarea name="share" id="share" style="width: 100%; height: 100px"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="videoLink">Bạn đã chia sẻ câu chuyện của mình lên Facebook/Tiktok/Instagram chưa? Hãy để lại đường link bên dưới nhé</label>
+                    <input type="url" id="socialLink" name="videoLink" placeholder="Link chia sẻ" required>
+                </div>
+
                 <button type="submit" class="btn-primary">Gửi Đăng Ký</button>
             </form>
             <div id="form-message" class="form-message"></div>
@@ -106,31 +115,58 @@
             <h2>Thể Lệ Cuộc Thi</h2>
             <div class="rules-content">
                 <h3>1. Đối tượng tham gia</h3>
-                <p>Mọi công dân Việt Nam không giới hạn độ tuổi, có đam mê sáng tạo nội dung video.</p>
-
-                <h3>2. Nội dung video</h3>
-                <p>Video dự thi thể hiện sự sáng tạo, độc đáo liên quan đến sản phẩm Miliket. Khuyến khích các video hài hước, review, hướng dẫn nấu ăn, hoặc kể chuyện.</p>
-
-                <h3>3. Yêu cầu kỹ thuật</h3>
                 <ul>
-                    <li>Độ dài: Tối thiểu 1 phút, tối đa 5 phút.</li>
-                    <li>Định dạng: MP4, AVI, MOV.</li>
-                    <li>Chất lượng: Full HD (1080p) trở lên.</li>
-                    <li>Video phải là tác phẩm gốc, chưa từng được công bố trên các phương tiện truyền thông khác.</li>
+                    <li>Mọi công dân đang sinh sống và làm việc tại Việt Nam </li>
+                    <li>Không giới hạn độ tuổi, nghề nghiệp.</li>
+                </ul>
+                    <p><strong>Lưu ý: </strong>Nhân viên đang làm việc tại Miliket và các đối tác liên quan đến chiến dịch không được tham gia.</p>
+
+       
+
+                <h3>2. Nội dung ảnh/video</h3>
+                <p>Nội dung thể hiện sự sáng tạo, độc đáo liên quan đến mì Miliket (ví dụ: kỷ niệm thời sinh viên, bữa ăn cùng gia đình, cứu trợ người dân vùng bị bão lũ…). Khuyến khích đăng tải các hình ảnh/ video có hình mì Miliket.</p>
+
+                <h3>3. Yêu cầu kỹ thuật hình ảnh/ video</h3>
+                <p><strong>Đối với Hình ảnh:</strong></p>
+                <ul>
+                    <li><strong>Định dạng:</strong> JPG, JPEG, PNG.</li>
+                    <li><strong>Kích thước khuyến nghị:</strong> Tối thiểu 1080px (chiều rộng) x 1080px (chiều cao) hoặc tỉ lệ vuông 1:1 để hiển thị tốt nhất trên các nền tảng mạng xã hội.</li>
+                    <li><strong>Chất lượng hình ảnh:</strong> đảm bảo ảnh nét, không mờ, nhòe hay lóa sáng</li>
+                </ul>
+
+                <p><strong>Đối với Video:</strong></p>
+                <ul>
+                    <li><strong>Định dạng:</strong> MP4, MOV, AVI.</li>
+                    <li><strong>Thời lượng:</strong> Tối thiểu 30s, tối đa 3 phút</li>
+                    <li><strong>Kích thước/Tỉ lệ khung hình:</strong> Khuyến nghị tỉ lệ 9:16 (Story/Reel) để tối ưu hiển thị trên di động và các nền tảng mạng xã hội.</li>
+                    <li><strong>Độ phân giải tối thiểu 720p HD.</strong></li>
+                    <li><strong>Nội dung: </strong>Video phải có âm thanh rõ ràng, hình ảnh sắc nét, không bị rung giật quá mức.</li>
+                </ul>
+                <p><strong>Quy định chung cho cả Hình ảnh và Video:</strong></p>
+                <ul>
+                    <li><strong>Tính độc quyền:</strong> Bài dự thi (hình ảnh và video) phải là <strong> tác phẩm gốc, do chính người tham gia tự sáng tạo và thực hiện</strong>, không vi phạm bản quyền của bất kỳ bên thứ ba nào.</li>
+                    <li><strong>Tính toàn vẹn:</strong> Nghiêm cấm sử dụng các tác phẩm đã đoạt giải trong các cuộc thi khác hoặc sao chép, chỉnh sửa từ các tác phẩm có sẵn trên internet/phương tiện truyền thông khác.</li>
+                    <li><strong>Quyền sử dụng:</strong> Người tham gia đồng ý cho phép Miliket sử dụng hình ảnh/video dự thi của mình cho mục đích truyền thông chiến dịch (có hoặc không có thù lao) trong thời gian diễn ra cuộc thi và sau đó.</li>
                 </ul>
 
                 <h3>4. Cách thức tham gia</h3>
-                <p>Đăng ký và gửi link video qua form trên trang web này.</p>
+
+                <ul>
+                    <li>Đăng ký tham gia trên website này</li>
+                    <li>Người tham gia cuộc thi phải gửi ảnh/video tô mì ký ức kèm câu chuyện về ký ức liên quan đến mì Miliket (ví dụ: kỷ niệm thời sinh viên, bữa ăn cùng gia đình, cứu trợ người dân vùng bị bão lũ…). Bên cạnh đó, chia sẻ câu chuyện ấy lên nền tảng mạng xã hội bao gồm: Facebook/Tiktok/Instagram kèm hashtag <strong>#CuocThiHuongViKyUc #Miliket</strong> và sau đó đính kèm link trong phần đăng ký</li>
+                    <li>Thực hiện đủ các yêu cầu trên là đăng ký tham gia thành công</li>
+                </ul>
 
                 <h3>5. Thời gian</h3>
-                <p>Bắt đầu: 01/06/2025 - Kết thúc: 30/06/2025.</p>
+                <p>Bắt đầu: 11/08/2025 - Kết thúc: 24/08/2025</p>
 
-                <h3>6. Giải thưởng</h3>
+                <h3>6. Giải thưởng cuộc thi</h3>
                 <ul>
-                    <li>Giải Nhất: 10.000.000 VND và sản phẩm Miliket 1 năm.</li>
-                    <li>Giải Nhì: 5.000.000 VND và sản phẩm Miliket 6 tháng.</li>
-                    <li>Giải Ba: 2.000.000 VND và sản phẩm Miliket 3 tháng.</li>
-                    <li>Giải Khuyến Khích: 1.000.000 VND và sản phẩm Miliket 1 tháng.</li>
+                    <li><strong>Giải nhất:</strong> Được in lên bao bì Miliket phiên bản giới hạn trong thời gian 1 tháng + 10 triệu VNĐ tiền mặt. Người thắng giải còn trở thành “gương mặt lan tỏa yêu thương” – đại diện cho hành trình ký ức và chia sẻ. <br>
+                    <i>Miliket sẽ thay mặt người thắng giải gửi những phần quà thiện nguyện mang bao bì đặc biệt đó đến các mái ấm, vùng khó khăn, như một cách biến ký ức cá nhân thành hành động ý nghĩa cho cộng đồng.</i>
+                    </li>
+                    <li><strong>Giải nhì:</strong> Bộ quà tặng Miliket (50 gói mì + túi tote thời trang) + 5 triệu VNĐ tiền mặt</li>
+                    <li><strong>Giải ba:</strong> Bộ quà tặng Miliket + 1 triệu VNĐ tiền mặt</li>
                 </ul>
             </div>
         </div>
